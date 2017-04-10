@@ -1,0 +1,158 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../xal.autogen.hfst
+    Morph: ../xal.automorf.hfst
+Tests:
+  Ablative:
+    ац<n><abl>: ацгас
+    дәр<n><abl>: дәрәс
+    ноха<n><abl>: нохаһас
+    төгә<n><abl>: төгәһәс
+    усн<n><abl>: уснас
+  Accusative:
+    мал<n><acc>: малиг
+    така<n><acc>: такаг
+    яма<n><acc>: ямаг
+  Adverbs: {}
+  Cardinals:
+    арвн<num><card>: арвн
+    долан<num><card>: долан
+    дөрвн<num><card>: дөрвн
+    зурһан<num><card>: зурһан
+    йисн<num><card>: йисн
+    негн<num><card>: негн
+    нөөмн<num><card>: нөөмн
+    тавн<num><card>: тавн
+    хойр<num><card>: хойр
+    һурвн<num><card>: һурвн
+    җирн<num><card>: җирн
+  Conjunctions:
+    болн<conjcoo>: болн
+    юңгад гихлә<conjsub>: юңгад гихлә
+    паре<conjcoo>: паре
+  Comitative:
+    күүкн<n><com>: күүкнлә
+    темән<n><com>: темәнлә
+    эк<n><com>: эклә
+  Dative:
+    багш<n><dat>: багшт
+    мөрн<n><dat>: мөрнд
+    нөкр<n><dat>: нөкрт
+    сам<n><dat>: самд
+    таг<n><dat>: тагт
+    темән<n><dat>: темәнд
+  Directive:
+    ац<n><dir>: ацур
+    балһсн<n><dir>: балһснур
+    ваһн<n><dir>: ваһнур
+  Genitive:
+    дүү<n><gen>: дүүһин
+    модн<n><gen>: модна
+    така<n><gen>: такан
+    тег<n><gen>: теегин
+    хөн<n><gen>: хөөнә
+    школ<n><gen>: школин
+  Instrumental:
+    мөсн<n><ins>: мөснәр 
+    төгә<n><ins>: төгәһәр
+    һар<n><ins>: һарар
+  Noun Cases: {}
+  Nouns:
+    живр<n><sg>: живр
+    пүрвә<n><sg>: пүрвә
+    Улусы<n><sg>: Улусы
+    саваго<n>: саваго
+    өөмсн<n><pl>: өөмсн
+    Эн<n>: Эн
+  Numerals: {}
+  Ordinals:
+    арвн<num><ord>: арвдгч
+    долан<num><ord>: доладгч
+    дөрв<num><ord>: дөрвдгч
+    зурһан<num><ord>: зурһадгч
+    йисн<num><ord>: йисдгч
+    негн<num><ord>: негдгч
+    нөөмн<num><ord>: нөөмдгч
+    тавн<num><ord>: тавдгч
+    хойр<num><ord>: хойрдгч
+    һурв<num><ord>: һурвдгч
+    җирн<num><ord>: җирндгч
+  Participles:
+    ал<v><pres>: алдг
+    ир<v><fut>: ирх
+    кел<v><fut>: келх
+    ор<v><past>: орсн
+    суу<v><pres>: суудг
+    суңһагд<v><past>: суңһагдсн
+    умш<v><fut>: умшх
+    үк<v><past>: үксн
+  Parts of Speech: {}
+  Personal Pronouns:
+    чи<prn><pers><p2><sg><inf><nom>: чи
+    чи<prn><pers><p2><sg><inf><gen>: чини
+    чи<prn><pers><p2><sg><inf><acc>: чамаг
+    чи<prn><pers><p2><sg><inf><dat>: чамд
+    чи<prn><pers><p2><sg><inf><abl>: чамас
+    чи<prn><pers><p2><sg><inf><ins>: чамар
+    чи<prn><pers><p2><sg><inf><com>: чамла
+    чи<prn><pers><p2><sg><inf><pos>: чамта
+    чи<prn><pers><p2><sg><inf><dir>: чамур
+    би<prn><pers><p1><sg><nom>: би
+    би<prn><pers><p1><sg><gen>: мини
+    бидн<prn><pers><p1><pl><inc><nom>: бидн
+    би<prn><pers><p1><sg><acc>: намаг
+    би<prn><pers><p1><sg><dat>: {намд, нанд}
+    би<prn><pers><p1><sg><abl>: {намас, нанас}
+    би<prn><pers><p1><sg><ins>: {намар, нанар}
+    би<prn><pers><p1><sg><com>: {намла, нанла}
+    би<prn><pers><p1><sg><pos>: {намта, нанта}
+    би<prn><pers><p1><sg><dir>: {намур, нанур}
+    та<prn><pers><p2><sg><for><nom>: та
+    та<prn><pers><p2><sg><for><gen>: тана
+    та<prn><pers><p2><sg><for><acc>: таниг
+    та<prn><pers><p2><sg><for><dat>: танд
+    та<prn><pers><p2><sg><for><abl>: танас
+    та<prn><pers><p2><sg><for><ins>: танар
+    та<prn><pers><p2><sg><for><com>: танла 
+    та<prn><pers><p2><sg><for><pos>: танта
+    та<prn><pers><p2><sg><for><dir>: танур
+    бидн<prn><pers><p1><pl><inc><gen>: мана
+    бидн<prn><pers><p1><pl><inc><acc>: маниг
+    бидн<prn><pers><p1><pl><inc><dat>: манд
+    бидн<prn><pers><p1><pl><inc><abl>: манас
+    бидн<prn><pers><p1><pl><inc><ins>: манар
+    бидн<prn><pers><p1><pl><inc><com>: манла
+    бидн<prn><pers><p1><pl><inc><pos>: манта
+    бидн<prn><pers><p1><pl><inc><dir>: манур
+    мадн<prn><pers><p1><pl><exc><nom>: мадн
+    мадн<prn><pers><p1><pl><exc><gen>: мадна 
+    мадн<prn><pers><p1><pl><exc><acc>: мадниг 
+    мадн<prn><pers><p1><pl><exc><dat>: маднд 
+    мадн<prn><pers><p1><pl><exc><abl>: маднас 
+    мадн<prn><pers><p1><pl><exc><ins>: маднар 
+    мадн<prn><pers><p1><pl><exc><com>: маднла 
+    мадн<prn><pers><p1><pl><exc><pos>: маднта 
+    мадн<prn><pers><p1><pl><exc><dir>: маднур 
+    тадн<prn><pers><p2><pl><nom>: тадн
+    тадн<prn><pers><p2><pl><gen>: тадна
+    тадн<prn><pers><p2><pl><acc>: тадниг
+    тадн<prn><pers><p2><pl><dat>: таднд
+    тадн<prn><pers><p2><pl><abl>: таднас
+    тадн<prn><pers><p2><pl><ins>: таднар
+    тадн<prn><pers><p2><pl><com>: таднла
+    тадн<prn><pers><p2><pl><pos>: таднта
+    тадн<prn><pers><p2><pl><dir>: таднур
+  Possessive:
+    гер<n><pos>: гертә
+    керм<n><pos>: кермтә
+    темән<n><pos>: темәнтә
+  Possessive Suffixes:
+    гер<n><px2pl>: гертн
+    көвүн<n><px1pl>: көвүнмдн
+    көвүн<n><px2sg>: көвүнчи
+    би<n><px2sg>: бичи 
+    өдр<n><px3sp>: өдрнь 
+
+  Pronouns: {}
+  Verbs: {}

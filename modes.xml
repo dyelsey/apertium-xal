@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="xal-twol" install="yes">
+    <pipeline>
+      <program name="hfst-strings2fst -S"/>
+      <program name="hfst-compose-intersect">
+        <file name=".deps/xal.twol.hfst"/>
+      </program>
+      <program name="hfst-fst2strings"/>
+    </pipeline>
+  </mode>
+
+  <mode name="xal-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="xal.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="xal-lexc" install="yes">
+    <pipeline>
+      <program name="hfst-lookup">
+        <file name=".deps/xal.LR.lexc.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="xal-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="xal.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="xal-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="xal.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="xal.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="xal-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="xal.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="xal.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

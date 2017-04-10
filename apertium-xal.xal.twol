@@ -1,0 +1,82 @@
+Alphabet
+ А Ә Б В Г Һ Д Е Ё Ж Җ З И Й К Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
+ а ә б в г һ д е ё ж җ з и й к л м н ң о ө п р с т у ү ф x ц ч ш щ ъ ы ь э ю я
+ 
+ %{A%}:а !%{A%}:0 %{A%}:ә 
+ %{i%}:и 
+ %{g%}:г %{g%}:0
+ %{G%}:0 !%{G%}:һ
+ %{Y%}:у %{Y%}:ү
+ %{n%}:н !%{n%}:м %{n%}:0
+ %{d%}:д !%{d%}:0
+ %{t%}:т !%{t%}:0
+ %{O%}:ө %{O%}:0
+ %{e%}:е %{e%}:0
+ %{a%}:а %{a%}:и
+ %{E%}:0
+ 
+ 
+ %>:0
+ % 
+ 
+   ;
+
+Sets
+
+Vowel = A Ә Е Ё И О Ө У Ү Ы Э Ю Я
+        а ә е ё и о ө у ү ы э ю я ;
+
+Consonant =  Б В Г Һ Д Ж Җ З Й К Л М Н Ң П Р С Т Ф Х Ц Ч Ш Щ Ъ Ь
+             б в г һ д ж җ з й к л м н ң п р с т ф x ц ч ш щ ъ ь ;
+
+
+FrontV = Ә E И Ө Ү Э
+         ә е и ө ү э ; 
+
+
+!@ д:д ү:ү ү:ү >:0 {G}:һ {i}:и {n}:н {A}:0
+!@ т:т ө:ө г:г ə:ə >:0 {G}:һ {A}:ə р:р
+!@ с:с а:а м:м >:0 {d}:д {t}:0
+
+Rules
+
+"n gen (1): realize {G} as һ if after a long vowel"
+%{G%}:һ <=> :Vowel :Vowel %>: _ ;
+	    :Vowel :Consonant :Consonant* :Vowel %>: _ \%{i%}: ;
+
+"n gen (2): realize {i} as null if after a vowel"
+%{i%}:0 <=> :Consonant :Vowel :0* _ ;
+		:н :0* _ ;
+
+"n gen (3): realize {n} as null if stem ends with н"
+%{n%}:0 <=> :н :0* _ ;
+
+"n gen (4): realize {A} as ә if stem contains front vowel"
+%{A%}:ә <=> [ :FrontV :Consonant :Consonant* ]/:0* _ ;
+	except %{n%}:н _ ;
+
+"n gen (5): delete A"
+%{A%}:0 <=> %{n%}:н _ ;
+
+"lengthening"
+%{E%}:Vx <=> :Vx _ :Consonant :Consonant* %>: :0* :Vowel ;
+ 	      where Vx in Vowel ; 
+
+"n dat: realize {t} as null after stems that end in sonorant consonants and vowels"
+%{t%}:0 <=> [ :Cx | :Vowel ] %>:0 %{d%}:д _ ;
+	where Cx in ( л м н ң ) ;
+
+"n dat: realize {d} as null after obstruent consonants and certain other consonants, indicated below"
+%{d%}:0 <=> :Cy %>: _ %{t%}:т ;
+	where Cy in ( с ш р г җ) ;
+ 
+"ord: realize {n} as null if before the ordinal suffix"
+%{n%}:0 <=> _ %>: :д :г :ч ;
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst
+

@@ -1,0 +1,27 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../xal.autogen.hfst
+    Morph: ../xal.automorf.hfst
+Tests:
+  Most Common Words:
+    Бурхн<n><sg>: Бурхн 
+    Хальмг<n>: Хальмг
+    болн<conjcoo>: болн
+    ик<unk>: ик
+    Зая<unk>: Зая
+    болтха<unk>: болтха
+    Эн<unk>: Эн
+    болв<unk>: болв
+    төлә<unk>: төлә 
+    н<unk>: н 
+    күн<unk>: күн 
+    Би<unk>: Би
+    андит<unk>: андит
+    илд<unk>: илд
+    уга<unk>: уга
+    тер<unk>: тер
+    сән<unk>: сән
+    келв<unk>: келв
+    анав<unk>: анав
+    бәә<unk>: бәә

@@ -1,0 +1,428 @@
+! Morphological Transducer for Kalmyk
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>      ! Noun
+%<np%>     ! Proper Noun
+%<prn%>    ! Pronoun
+%<num%>    ! Numeral
+%<post%>   ! Postposition
+%<adj%>    ! Adjective
+%<verb%>   ! Verb
+%<conj%>   ! Conjunction
+%<ptcl%>   ! Particle
+%<ij%>     ! Interjection
+%<art%>    ! article (tbd; for lexical transfer)
+
+! Number morphology
+%<pl%>     ! Plural
+%<sg%>     ! Singular
+
+! Case morphology
+%<gen%>    ! Genitive
+%<acc%>    ! Accusative
+%<dat%>    ! Dative
+%<abl%>    ! Ablative
+%<ins%>    ! Instrumental
+%<com%>    ! Comitative
+%<pos%>    ! Possessive
+%<dir%>    ! Directive
+
+! Possession morphology
+%<px1sg%>  ! First person singular
+%<px2sg%>  ! Second person singular
+%<px1pl%>  ! First person plural
+%<px2pl%>  ! Second person plural
+%<px3sp%>  ! Third person
+
+! Pronoun morphology
+%<pers%>   ! Personal
+%<p1%>     ! First person
+%<p2%>     ! Second person
+%<exc%>    ! Exclusive
+%<inc%>    ! Inclusive
+
+! Numeral morphology
+%<num%>    ! Numeral
+%<ord%>    ! Ordinal numbers
+
+! Tense morphology
+%<fut%>    ! Future
+%<past%>   ! Past
+%<pres%>   ! Present
+%<inf%>    ! Infinitive
+
+! Archiphonemes
+%>         ! Morpheme boundary
+%{i%}      ! и (i) or null
+%{A%}      ! а or ә or null
+%{g%}      ! г (g) or null
+%{G%}      ! һ (gh) or null
+%{Y%}      ! be у or ү 
+%{n%}      ! н (n) or null
+%{d%}      ! д or null
+%{t%}      ! т or null
+%{O%}      ! ө or null
+%{e%}      ! е or null
+%{a%}      ! а or и
+%{E%}      ! 
+
+%          ! space escape
+
+! Punctuation
+%<sent%>   ! Sentence marker
+%<guio%>   ! Hyphen
+%<cm%>     ! Comma
+%<apos%?   ! Apostrophe
+%<rquot%>  ! Quote marker (right)
+%<rquot%>  ! Quote marker (left)
+%<rpar%>   ! Parenthetical marker (right)
+%<lpar%>   ! Parenthetical marker (left)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+NounRoot ;
+VerbRoot ;
+PronounRoot ;
+ConjunctionRoot ;
+AdjectiveRoot;
+PostpositionRoot ;
+Punctuation ;
+Numbers ;
+
+LEXICON ProperNoun
+%<np%>:%> # ;
+
+LEXICON RegNounInfl
+! %<n%>:%> Cases ;
+%<n%>%<sg%>: Cases ;
+%<n%>%<pl%>:%>%{G%}%{Y%}д Cases ;
+
+LEXICON Cases
+%<gen%>:%>%{G%}%{i%}%{n%}%{A%} # ;
+%<acc%>:%>%{i%}г # ;
+%<dat%>:%>%{d%}%{t%} # ;
+%<abl%>:%>%{G%}%{g%}%{A%}с # ;
+%<ins%>:%>%{G%}%{A%}р # ;
+%<com%>:%>л%{A%} # ;
+%<pos%>:%>т%{A%} # ;
+%<dir%>:%>%{G%}%{Y%}р # ;
+
+LEXICON PossSuff
+%<n%>%<px1sg%>:%>%м # ;
+%<n%>%<px2sg%>:%>%чи # ;
+%<n%>%<px1pl%>:%>%мдн # ;
+%<n%>%<px2pl%>:%>%тн # ;
+%<n%>%<px3sp%>:%>%нь # ;
+
+LEXICON Numerals
+%<num%>%<card%>:%> # ;
+%<num%>%<ord%>:%>%дгч # ;
+
+LEXICON Participles
+%<v%>%<fut%>:%>%х # ;
+%<v%>%<past%>:%>%сн # ;
+%<v%>%<pres%>:%>%дг # ;
+
+LEXICON TempVerb
+%<v%>%<inf%>:%> # ;
+
+LEXICON TempAdjective
+%<adj%>:%> # ;
+
+LEXICON PersPrnTwo !(p1s,p2infs)
+%<nom%>:%> # ;
+%<gen%>:%>%ни # ;
+%<acc%>:%>%{n%}аг # ;
+%<dat%>:%>%{n%}д # ;
+%<abl%>:%>%{n%}ас # ;
+%<ins%>:%>%{n%}ар # ;
+%<com%>:%>%{n%}ла # ;
+%<pos%>:%>%{n%}та # ;
+%<dir%>:%>%{n%}ур # ;
+
+LEXICON PersPrnFour !(the rest of the pronouns)
+%<nom%>:%>%н # ;
+%<gen%>:%>%на # ;
+%<acc%>:%>%ниг # ;
+%<dat%>:%>%нд # ;
+%<abl%>:%>%нас # ;
+%<ins%>:%>%нар # ;
+%<com%>:%>%нла # ;
+%<pos%>:%>%нта # ;
+%<dir%>:%>%нур # ;
+
+LEXICON Conjunctions
+%<conjcoo%>:%> # ;
+%<conjsub%>:%> # ;
+
+LEXICON TempPostPo
+%<post%>:%> # ;
+
+LEXICON Punctuation
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ;
+%'%<apos%>:%' # ;
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON NounRoot
+
+дүү:дүү RegNounInfl ;              ! gen, "younger brother"
+модн:мод%{n%} RegNounInfl ;        ! gen, "tree"
+така:така RegNounInfl ;            ! gen, "hen"
+тег:те%{E%}г RegNounInfl ;         ! gen, "steppe"
+хөн:хө%{E%}н RegNounInfl ;         ! gen, "sheep" 
+школ:школ RegNounInfl;             ! gen, "school" 
+
+мал:мал RegNounInfl ;              ! acc, "cattle"
+така:така RegNounInfl;             ! acc, "hen"
+яма:яма RegNounInfl;               ! acc, "goat"
+
+багш:багш RegNounInfl ;            ! dat, "teacher"
+мөрн:мөрн RegNounInfl ;            ! dat, "horse"
+нөкр:нөкр RegNounInfl ;            ! dat, "friend"
+сам:сам RegNounInfl ;              ! dat, "scallop"
+таг:таг RegNounInfl ;              ! dat, "shelf"
+темән:темән RegNounInfl ;          ! dat, "camel"
+
+ац:ац RegNounInfl ;                ! abl, "game"
+дәр:дәр RegNounInfl ;              ! abl, "powder"
+ноха:ноха RegNounInfl ;            ! abl, "dog"
+!төгә:төгә RegNounInfl ;           ! abl, "wheel" 
+усн:усн RegNounInfl ;              ! abl, "water"
+
+мөсн:мөсн RegNounInfl ;            ! ins, "ice"
+төгә:төгә RegNounInfl ;            ! ins, "wheel" 
+һар:һар RegNounInfl ;              ! ins, "hand; arm"
+
+күүкн:күүкн RegNounInfl ;          ! com, "girl"
+темән:темән RegNounInfl ;          ! com, "camel"
+эк:эк RegNounInfl ;                ! com, "mother"
+
+гер:гер RegNounInfl ;              ! pos, "house"
+керм:керм RegNounInfl ;            ! pos, "squirrel"
+темән:темән RegNounInfl ;          ! pos, "camel" 
+
+ац:ац RegNounInfl ;                ! dir, "game"
+балһсн:балһсн RegNounInfl ;        ! dir, "city"
+ваһн:ваһн RegNounInfl ;            ! dir, "pillar"
+
+гер:гер PossSuff ; 
+көвүн:көвүн PossSuff ;
+көвүн:көвүн PossSuff ;
+би:би PossSuff ;
+өдр:өдр PossSuff ;           ! "day"
+
+Сирий:Сирий ProperNoun ;     ! "Syria"
+Давид:Давид ProperNoun ;     ! "David"
+Мирьям:Мирьям ProperNoun ;   ! "Mary"
+
+җивр:җивр RegNounInfl ;      !  "wing"
+пүрвә:пүрвә RegNounInfl ;    ! for adding char п, "thursday" 
+Улусы:Улусы RegNounInfl ;    ! for adding char ы, "Ulussy"
+саваго:саваго RegNounInfl ;  ! "impatience", lexical transfer
+өөмсн:өөмсн RegNounInfl ;    ! "socks"
+цагт:цагт RegNounInfl ;      ! "time"
+хөөч:хөөч RegNounInfl ;      ! "shepherd"
+хан:хан RegNounInfl ;        ! "king"
+орн:орн RegNounInfl ;        ! "country"
+һазрин:һазрин RegNounInfl ;  ! "area; institution; authority; management"
+эндр:эндр RegNounInfl ;      ! "today"
+хотнд:хотнд Cases ;          ! "village", dat
+нилх:нилх RegNounInfl ;      ! "infant"
+элчəс:элчəс Cases ;          ! "messenger", abl
+зүркн:зүркн RegNounInfl ;    ! "heart; courage"
+кувц:кувц RegNounInfl ;      ! "merchant"
+заhсн:заhсн RegNounInfl ;    ! "fish"
+корзин:корзин RegNounInfl ;  ! "basket"
+нумн:нумн RegNounInfl ;      ! "onion; bow"
+өндгн:өндгн RegNounInfl ;    ! "egg"
+Бурхн:Бурхн RegNounInfl ;    ! "God"
+аhар:аhар RegNounInfl ;      ! "air"
+альмн:альмн RegNounInfl ;    ! "apple"
+өвсн:өвсн RegNounInfl ;      ! "grass; pestilence"
+бүчр:бүчр RegNounInfl ;      ! "leaf"
+нудрм:нудрм RegNounInfl ;    ! "fist"
+төрскн:төрскн RegNounInfl ;  ! "homeland"
+ТаңҺч:ТаңҺч Cases ;          ! "people; nation", gen TODO: morphology being analyzed correctly?
+үсн:үсн RegNounInfl;         ! "hair", general/human
+килhсн:килhсн RegNounInfl;   ! "hair", of animal, usually horse
+эм:эм RegNounInfl ;          ! "woman"
+күн:күн RegNounInfl ;        ! "man"
+баһчуд:баһчуд RegNounInfl ;  ! "youth"
+
+LEXICON VerbRoot
+
+ал:ал Participles ;          ! pres, "is slaughtered" 
+ир:ир Participles ;          ! fut, "will come"
+кел:кел Participles ;        ! fut, "will say"
+ор:ор Participles ;          ! past, "fallen"
+суу:суу Participles ;        ! pres, "sit"
+суңһагд:суңһагд Participles ;! past, "elected"
+умш:умш Participles ;        ! fut, "can be read"
+үк:үк Participles ;          ! past, "dead"
+
+hәрәдлдх:hәрәдлдх TempVerb ; ! "jump; ride" 
+нисх:нисх TempVerb ;         ! "fly"
+бәәх:бәәх TempVerb ;         ! "live"
+нишх:нишх TempVerb ;         ! "strike"
+шуулх:шуулх TempVerb ;       ! "tear; rip"
+дүүҗлх:дүүҗлх TempVerb ;     ! "hang"
+зулх:зулх TempVerb ;         ! "fly"
+сурх:сурх TempVerb ;         ! "ask"
+хувцлх:хувцлх TempVerb ;     ! "dress"
+кевт:кевт TempVerb ;         ! "lie (down)"
+!энүг:энүг TempVerb ;         ! "do"
+күцәхин:күцәхин TempVerb ;   ! "to perform" TODO: ин possibly a case
+һундах:һундах TempVerb ;     ! "to upset; to hurt"
+догдлад:догдлад TempVerb ;   ! "to beat", TODO: converb form
+бәәнә:бәәнә TempVerb ;       ! "to be", TODO: non-past/present form
+тосхах:тосхах TempVerb ;     ! "to build"
+неегдх:неегдх TempVerb ;     ! "to open"
+герлтҗ:герлтҗ TempVerb ;     ! "glow" TODO: add correct form
+
+LEXICON Numbers
+
+арвн:арв%{n%} Numerals ;     ! card
+долан:дола%{n%} Numerals ;   ! card
+дөрвн:дөрв%{n%} Numerals ;   ! card 
+зурһан:зурһа%{n%} Numerals ; ! card
+йисн:йис%{n%} Numerals ;     ! card
+негн:нег%{n%} Numerals ;     ! card
+нөөмн:нөөм%{n%} Numerals ;   ! card
+тавн:тав%{n%} Numerals ;     ! card
+хойр:хойр Numerals ;         ! card
+һурвн:һурв%{n%} Numerals ;   ! card
+җирн:җир%{n%} Numerals ;     ! card, 60
+
+арв:арв Numerals ;           ! ord
+дола:дола Numerals ;         ! ord
+дөрв:дөрв Numerals ;         ! ord 
+зурһа:зурһа Numerals ;       ! ord
+йис:йис Numerals ;           ! ord
+нег:нег Numerals ;           ! ord
+нөөм:нөөм Numerals ;         ! ord  
+тав:тав Numerals ;           ! ord
+хойр:хойр Numerals ;         ! ord 
+һурв:һурв Numerals ;         ! ord
+җирн:җирн Numerals ;         ! ord, 60
+
+
+
+LEXICON PronounRoot
+
+би%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:би ;     ! nom
+би%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:мини ;   ! gen
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! acc
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! dat
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! abl
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! ins
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! com
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! pos
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! dir
+би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+чи%<prn%>%<pers%>%<p2%>%<sg%>%<inf%>:ч%{a%} PersPrnTwo ; 
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !nom
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !gen
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !acc
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !dat
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !abl
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !ins
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !com
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !pos
+та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !dir
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>%<nom%>:бидн ; 
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ; !nom
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+мадн%<prn%>%<pers%>%<p1%>%<pl%>%<exc%>:мад PersPrnFour ;
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; !nom
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
+
+LEXICON ConjunctionRoot       ! TODO: add <conjcoo> and <conjsub> distinctions on all
+болн:болн Conjunctions ;      ! "and"
+юңгад% гихлә:юңгад% гихлә Conjunctions ; ! "because"
+паре:паре Conjunctions ;      ! "couple", lexical transfer, prep->conj
+
+LEXICON AdjectiveRoot
+əмтн:əмтн TempAdjective ;     ! "living/live"
+соңссн:соңссн TempAdjective ; ! "heard"
+кергтә:кергтә TempAdjective ; ! "necessary"
+Хальмг:Хальмг TempAdjective ; ! "Kalmyk"
+эн:эн TempAdjective ;         ! "this;the" TODO: add morph
+энүг:энүг TempAdjective ;     ! "this", acc TODO: add morph
+
+LEXICON PostpositionRoot
+төлә:төлә TempPostPo ; ! "for; instead of"
+
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://www.cis.upenn.edu/~cis639/docs/lexc.html
+! http://wiki.apertium.org/wiki/Hfst
+
