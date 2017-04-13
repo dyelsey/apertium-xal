@@ -9,6 +9,8 @@ Multichar_Symbols
 %<num%>    ! Numeral
 %<post%>   ! Postposition
 %<adj%>    ! Adjective
+%<det%>    ! Determiner
+%<dem%>    ! Demonstrative
 %<verb%>   ! Verb
 %<conj%>   ! Conjunction
 %<ptcl%>   ! Particle
@@ -20,6 +22,7 @@ Multichar_Symbols
 %<sg%>     ! Singular
 
 ! Case morphology
+%<nom%>    ! Nominative
 %<gen%>    ! Genitive
 %<acc%>    ! Accusative
 %<dat%>    ! Dative
@@ -105,6 +108,7 @@ LEXICON RegNounInfl
 %<n%>%<pl%>:%>%{G%}%{Y%}д Cases ;
 
 LEXICON Cases
+%<nom%>: # ;
 %<gen%>:%>%{G%}%{i%}%{n%}%{A%} # ;
 %<acc%>:%>%{i%}г # ;
 %<dat%>:%>%{d%}%{t%} # ;
@@ -115,11 +119,11 @@ LEXICON Cases
 %<dir%>:%>%{G%}%{Y%}р # ;
 
 LEXICON PossSuff
-%<n%>%<px1sg%>:%>%м # ;
-%<n%>%<px2sg%>:%>%чи # ;
-%<n%>%<px1pl%>:%>%мдн # ;
-%<n%>%<px2pl%>:%>%тн # ;
-%<n%>%<px3sp%>:%>%нь # ;
+%<px1sg%>:%>%м # ;
+%<px2sg%>:%>%чи # ;
+%<px1pl%>:%>%мдн # ;
+%<px2pl%>:%>%тн # ;
+%<px3sp%>:%>%нь # ;
 
 LEXICON Numerals
 %<num%>%<card%>:%> # ;
@@ -256,9 +260,9 @@ LEXICON NounRoot
 орн:орн RegNounInfl ;        ! "country"
 һазрин:һазрин RegNounInfl ;  ! "area; institution; authority; management"
 эндр:эндр RegNounInfl ;      ! "today"
-хотнд:хотнд Cases ;          ! "village", dat
+хотнд:хотнд RegNounInfl ;    ! "village", dat
 нилх:нилх RegNounInfl ;      ! "infant"
-элчəс:элчəс Cases ;          ! "messenger", abl
+элчəс:элчəс RegNounInfl ;    ! "messenger", abl
 зүркн:зүркн RegNounInfl ;    ! "heart; courage"
 кувц:кувц RegNounInfl ;      ! "merchant"
 заhсн:заhсн RegNounInfl ;    ! "fish"
@@ -272,12 +276,13 @@ LEXICON NounRoot
 бүчр:бүчр RegNounInfl ;      ! "leaf"
 нудрм:нудрм RegNounInfl ;    ! "fist"
 төрскн:төрскн RegNounInfl ;  ! "homeland"
-ТаңҺч:ТаңҺч Cases ;          ! "people; nation", gen TODO: morphology being analyzed correctly?
+таңҺч:таңҺч RegNounInfl ;    ! "people; nation", 
 үсн:үсн RegNounInfl;         ! "hair", general/human
 килhсн:килhсн RegNounInfl;   ! "hair", of animal, usually horse
 эм:эм RegNounInfl ;          ! "woman"
-күн:күн RegNounInfl ;        ! "man"
+күн:күн RegNounInfl ;        ! "man" 
 баһчуд:баһчуд RegNounInfl ;  ! "youth"
+гергн:гергн RegNounInfl ;    ! "wife"
 
 LEXICON VerbRoot
 
@@ -410,8 +415,9 @@ LEXICON AdjectiveRoot
 соңссн:соңссн TempAdjective ; ! "heard"
 кергтә:кергтә TempAdjective ; ! "necessary"
 Хальмг:Хальмг TempAdjective ; ! "Kalmyk"
-эн:эн TempAdjective ;         ! "this;the" TODO: add morph
-энүг:энүг TempAdjective ;     ! "this", acc TODO: add morph
+
+эн%<det%>%<dem%>:эн # ;         ! "this;the" TODO: add morph
+энүг%<det%>%<dem%>:энүг # ;     ! "this", acc TODO: add morph
 
 LEXICON PostpositionRoot
 төлә:төлә TempPostPo ; ! "for; instead of"
