@@ -8,14 +8,16 @@ Multichar_Symbols
 %<prn%>    ! Pronoun
 %<num%>    ! Numeral
 %<post%>   ! Postposition
+%<pr%>     ! Preposition
 %<adj%>    ! Adjective
+%<adv%>    ! Adverb
 %<det%>    ! Determiner
 %<dem%>    ! Demonstrative
 %<verb%>   ! Verb
 %<conj%>   ! Conjunction
 %<ptcl%>   ! Particle
 %<ij%>     ! Interjection
-%<art%>    ! article (tbd; for lexical transfer)
+%<art%>    ! article 
 
 ! Number morphology
 %<pl%>     ! Plural
@@ -135,10 +137,14 @@ LEXICON Participles
 %<v%>%<pres%>:%>%дг # ;
 
 LEXICON TempVerb
+%<v%>:%> # ;
 %<v%>%<inf%>:%> # ;
 
-LEXICON TempAdjective
+LEXICON TempAdj
 %<adj%>:%> # ;
+
+LEXICON TempAdverb
+%<adv%>:%> # ;
 
 LEXICON PersPrnTwo !(p1s,p2infs)
 %<nom%>:%> # ;
@@ -168,6 +174,9 @@ LEXICON Conjunctions
 
 LEXICON TempPostPo
 %<post%>:%> # ;
+
+LEXICON TempPrep
+%<pr%>:%> # ;
 
 LEXICON Punctuation
 .%<sent%>:. # ;
@@ -254,10 +263,10 @@ LEXICON NounRoot
 Улусы:Улусы RegNounInfl ;    ! for adding char ы, "Ulussy"
 саваго:саваго RegNounInfl ;  ! "impatience", lexical transfer
 өөмсн:өөмсн RegNounInfl ;    ! "socks"
-цагт:цагт RegNounInfl ;      ! "time"
+цаг:цаг RegNounInfl ;        ! "time"
 хөөч:хөөч RegNounInfl ;      ! "shepherd"
 хан:хан RegNounInfl ;        ! "king"
-орн:орн RegNounInfl ;        ! "country"
+орн:орн RegNounInfl ;        ! "countrбуйнy"
 һазрин:һазрин RegNounInfl ;  ! "area; institution; authority; management"
 эндр:эндр RegNounInfl ;      ! "today"
 хотнд:хотнд RegNounInfl ;    ! "village", dat
@@ -283,6 +292,130 @@ LEXICON NounRoot
 күн:күн RegNounInfl ;        ! "man" 
 баһчуд:баһчуд RegNounInfl ;  ! "youth"
 гергн:гергн RegNounInfl ;    ! "wife"
+меңгн:меңгн RegNounInfl ;    ! "money"
+хаша:хаша RegNounInfl ;      ! "fence"
+цаг:цаг RegNounInfl ;        ! "hour"
+туула:туула RegNounInfl ;    ! "hare"
+аңhуч:аңhуч RegNounInfl ;    ! "hunter"
+магтал:магтал RegNounInfl ;  ! "praise"
+сег:сег RegNounInfl ;	     ! "word"
+үг:үг RegNounInfl ;	     ! "word"
+цасн:цасн RegNounInfl ;      ! "snow"
+hазр:hазр RegNounInfl ;	     ! "ground; soil"
+сахл:сахл RegNounInfl ;      ! "beard; mustache"
+эзн:эзн RegNounInfl ;        ! "master"
+байр:байр RegNounInfl ;	     ! "joy"
+буйн:буйн RegNounInfl ;      ! "goodness"
+делкә:делкә RegNounInfl ;    ! "world"
+күүкд:күүкд RegNounInfl ;    ! "child"
+өр% өвдлhн:өр% өвдлhн RegNounInfl ; ! "a pity"
+мясо:мясо RegNounInfl ;      ! "meat"
+хүрм:хүрм RegNounInfl ;      ! "wedding"
+үкр:үкр RegNounInfl ;        ! "cow"
+ө-модн:ө-модн RegNounInfl ;  ! "forest"
+огчм:огчм RegNounInfl ;      ! "valley
+күүкн:күүкн RegNounInfl ;    ! "daughter"
+сө:сө RegNounInfl ;	     ! "night"
+залу:залу RegNounInfl ;      ! "husband"
+зарц% күүкн:зарц% күүкн RegNounInfl ; ! "maid"
+керл:керл RegNounInfl ;      ! "lady"
+медицин:медицин RegNounInfl ;! "medicine"
+таблиц:таблиц RegNounInfl ;  ! "table"
+hосч:hосч RegNounInfl ;      ! "cobbler; bootmaker"
+эрс:эрс RegNounInfl ;        ! "wall"
+талк:талк RegNounInfl ;      ! "side"
+амн-хамр:амн-хамр RegNounInfl ; ! "face"
+hаха:hаха RegNounInfl ;      ! "pig"
+цусн:цусн RegNounInfl ;      ! "blood"
+гесн:гесн RegNounInfl ;      ! "belly"
+алач:алач RegNounInfl ;      ! "hangman"
+селм:селм RegNounInfl ;      ! "sword"
+андhар:андhар RegNounInfl ;  ! "oath"
+меклә:меклә RegNounInfl ;    ! "frog"
+бал:бал RegNounInfl ;        ! "honey"
+сән% өдрллhн:сән% өдрллhн RegNounInfl ; ! "festival"
+зевсг:зевсг RegNounInfl ;    ! "instrument"
+көгҗм:көгҗм RegNounInfl ;    ! "music"
+дун:дун RegNounInfl ;        ! "song"
+хавтх:хавтх RegNounInfl ;    ! "pocket"
+утх:утх RegNounInfl ;        ! "knife
+үксн% бий:үксн% бий RegNounInfl ; ! "corpse"
+хурц% ухан:хурц% ухан RegNounInfl ; ! "common sense" (sanity)
+көл:көл RegNounInfl ;        ! "foot"
+тергн:тергн RegNounInfl ;    ! "cart"
+девән:девән RegNounInfl ;    ! "field"
+үүдч:үүдч RegNounInfl ;      ! "porter"
+уульнцин:уульнцин RegNounInfl ; ! "street"
+хувцн:хувцн RegNounInfl ;    ! "cothes" TODO: plural??
+көвүн:көвүн RegNounInfl ;    ! "boy"
+эд:эд RegNounInfl ;          ! "fabric"
+ширк:ширк RegNounInfl ;      ! "glass"
+инженер:инженер RegNounInfl ; ! "engineer"
+мастерской:мастерской RegNounInfl ; ! "workshop"
+терз:терз RegNounInfl ;      ! "window"
+арслң:арслң RegNounInfl ;    ! "lion"
+зүүдн:зүүдн RegNounInfl ;    ! "dream"
+арат:арат RegNounInfl ;      ! "fox"
+цә:цә RegNounInfl ;          ! "tea"
+кружк:кружк RegNounInfl ;    ! "cup"
+дулаhар:дулаhар RegNounInfl ;! "heat"
+hуйр:hуйр RegNounInfl ;      ! "heat"
+теермч:теермч RegNounInfl ;  ! "miller"
+авъяс:авъяс RegNounInfl ;    ! "habit"
+бах:бах RegNounInfl ;        ! "satisfaction"
+бий:бий RegNounInfl ;        ! "body"
+теңгс:теңгс RegNounInfl ;    ! "sea"
+асхн:асхн RegNounInfl ;      ! "evening"
+йох:йох RegNounInfl ;        ! "top"
+хавр:хавр RegNounInfl ;      ! "spring" (the season)
+эрднь-иш:эрднь-иш RegNounInfl ; ! "corn"
+бәрлдәнә:бәрлдәнә RegNounInfl ; ! "battle"
+меңслhн:меңслhн RegNounInfl ;! "effort"
+кедмнә% модн:кедмнә% модн RegNounInfl ; ! "pear tree"
+өдмг:өдмг RegNounInfl ;      ! "bread"
+толhа:толhа RegNounInfl ;    ! "head"
+малч:малч RegNounInfl ;      ! "cowherd"
+ичр:ичр RegNounInfl ;        ! "shame"
+маҗ:маҗ RegNounInfl ;        ! "buffalo"
+община:община RegNounInfl ;  ! "community"
+иньглсн:иньглсн RegNounInfl ;! "lover"
+баатр:баатр RegNounInfl ;    ! "hero"
+күзүн:күзүн RegNounInfl ;    ! "neck"
+җалв:җалв RegNounInfl ;      ! "salary"
+алтн:алтн RegNounInfl ;      ! "gold"
+хар% санан:хар% санан RegNounInfl ; ! "guile"
+ухалҗ:ухалҗ RegNounInfl ;    ! "invention"
+сөдрмг:сөдрмг RegNounInfl ;  ! "audacity"
+моhа:моhа RegNounInfl ;      ! "snake"
+өрмин% тосн:өрмин% тосн RegNounInfl ; ! "butter"
+өвдкүр:өвдкүр RegNounInfl ;  ! "pain"
+аҗл:аҗл RegNounInfl ;        ! "labor"
+үн:үн RegNounInfl ;          ! "price"
+өндр:өндр RegNounInfl ;      ! "height"
+наадач:наадач RegNounInfl ;  ! "gambler"
+харцх:харцх RegNounInfl ;    ! "hawk"
+бөкүн:бөкүн RegNounInfl ;    ! "mosquito"
+заhсч:заhсч RegNounInfl ;    ! "fisherman"
+шүүгүл:шүүгүл RegNounInfl ;  ! "net"
+шил:шил RegNounInfl ;        ! "crest" (of the hill)
+цоклт:цоклт RegNounInfl ;    ! "stroke"
+зуулhн:зуулhн RegNounInfl ;  ! "bite"
+сулдхл:сулдхл RegNounInfl ;  ! "freedom"
+чолун:чолун RegNounInfl ;    ! "stone"
+нарн:нарн RegNounInfl ;      ! "sun"
+церг:церг RegNounInfl ;      ! "army"
+саалтг:саалтг RegNounInfl ;  ! "hindrance; obstacle"
+хамр:хамр RegNounInfl ;      ! "nose"
+ә:ә RegNounInfl ;	     ! "sound"
+турун:турун RegNounInfl ;    ! "hoof"
+сүк:сүк RegNounInfl ;        ! "axe"
+сүк:сүк RegNounInfl ;        ! "honor"
+үнн:үнн RegNounInfl ;	     ! "truth"
+йиртмҗ:йиртмҗ RegNounInfl ;  ! "nature"
+аав:аав RegNounInfl ;        ! "father"
+бәәшң:бәәшң RegNounInfl ;    ! "palace"
+муҗг:муҗг RegNounInfl ;      ! "peasant"
+
 
 LEXICON VerbRoot
 
@@ -295,16 +428,16 @@ LEXICON VerbRoot
 умш:умш Participles ;        ! fut, "can be read"
 үк:үк Participles ;          ! past, "dead"
 
-hәрәдлдх:hәрәдлдх TempVerb ; ! "jump; ride" 
-нисх:нисх TempVerb ;         ! "fly"
-бәәх:бәәх TempVerb ;         ! "live"
-нишх:нишх TempVerb ;         ! "strike"
-шуулх:шуулх TempVerb ;       ! "tear; rip"
-дүүҗлх:дүүҗлх TempVerb ;     ! "hang"
-зулх:зулх TempVerb ;         ! "fly"
-сурх:сурх TempVerb ;         ! "ask"
-хувцлх:хувцлх TempVerb ;     ! "dress"
-кевт:кевт TempVerb ;         ! "lie (down)"
+hәрәдлдх:hәрәдлдх TempVerb ; ! "to jump; ride" 
+нисх:нисх TempVerb ;         ! "to fly"
+бәәх:бәәх TempVerb ;         ! "to live"
+нишх:нишх TempVerb ;         ! "to strike"
+шуулх:шуулх TempVerb ;       ! "to tear; rip"
+дүүҗлх:дүүҗлх TempVerb ;     ! "to hang"
+зулх:зулх TempVerb ;         ! "to fly"
+сурх:сурх TempVerb ;         ! "to ask"
+хувцлх:хувцлх TempVerb ;     ! "to dress"
+кевт:кевт TempVerb ;         ! "to lie (down)"
 !энүг:энүг TempVerb ;         ! "do"
 күцәхин:күцәхин TempVerb ;   ! "to perform" TODO: ин possibly a case
 һундах:һундах TempVerb ;     ! "to upset; to hurt"
@@ -312,7 +445,110 @@ hәрәдлдх:hәрәдлдх TempVerb ; ! "jump; ride"
 бәәнә:бәәнә TempVerb ;       ! "to be", TODO: non-past/present form
 тосхах:тосхах TempVerb ;     ! "to build"
 неегдх:неегдх TempVerb ;     ! "to open"
-герлтҗ:герлтҗ TempVerb ;     ! "glow" TODO: add correct form
+герлтҗ:герлтҗ TempVerb ;     ! "to glow" TODO: add correct form
+доңhдулх:доңhдулх TempVerb ; ! "to cackle"
+гүүх:гүүх TempVerb ; 	     ! "to flee"
+даминь% авх:даминь% авх TempVerb ; ! "to understand"
+играть:играть TempVerb ;     ! "to play" (recreational activity)
+аңhучлх:аңhучлх TempVerb ;   ! "to hunt"
+меклх:меклх TempVerb ;       ! "to cheat"
+унтх:унтх TempVerb ;         ! "to sleep"
+зокъялх:зокъялх TempVerb ;   ! "to arrange"
+алх:алх TempVerb ;           ! "to cut"
+әрлhәх:әрлhәх TempVerb ;     ! "to destroy"
+буурах:буурах TempVerb ;     ! "to fall"
+идх:идх TempVerb ;           ! "to eat"
+ицх:ицх TempVerb ;           ! "to hope"
+уульх:уульх TempVerb ;       ! "to cry"
+асрх:асрх TempVerb ;         ! "to bring"
+гүүх:гүүх TempVerb ;         ! "to run"
+цокх:цокх TempVerb ;         ! "to thresh"
+уhах:уhах TempVerb ;         ! "to wash"
+зүглүлх:зүглүлх TempVerb ;   ! "to guide"
+күрх:күрх TempVerb ;         ! "to achieve"
+гүүцәх:гүүцәх TempVerb ;     ! "to finish"
+харhлдх:харhлдх TempVerb ;   ! "to meet"
+сурх:сурх TempVerb ;         ! "to ask"
+серлх:серлх TempVerb ;       ! "to realize"
+нерәдсн:нерәдсн TempVerb ;   ! "to call"
+саҗхa:саҗх TempVerb ;        ! "to shake"
+аҗлх:аҗлх TempVerb ;         ! "to toil"
+өргх:өргх TempVerb ;         ! "to lift"
+өөмх:өөмх TempVerb ;         ! "to swim"
+чивх:чивх TempVerb ;         ! "to sink"
+инәдн:инәдн TempVerb ;       ! "to laugh"
+зөвчлдх:зөвчлдх TempVerb ;   ! "to debate"
+биилх:биилх TempVerb ;       ! "to dance"
+
+LEXICON ConjunctionRoot
+
+болн:болн Conjunctions ;     ! "and"
+юңгад% гихлә:юңгад% гихлә Conjunctions ; ! "because"
+!паре:паре Conjunctions ;     ! "couple", lexical transfer, prep->conj
+болхла:болхла Conjunctions;  ! "if"
+
+
+LEXICON AdjectiveRoot
+
+əмтн:əмтн TempAdj ;	      ! "living/live"
+соңссн:соңссн TempAdj ;	      ! "heard"
+кергтә:кергтә TempAdj ;	      ! "necessary"
+Хальмг:Хальмг TempAdj ;       ! "Kalmyk"
+далд:далд TempAdj ;           ! "hidden"
+бүкл:бүкл TempAdj ;           ! "whole" (as in entire)
+нертә:нертә TempAdj ;         ! "known"
+алдр:алдр TempAdj ;           ! "known"
+эрт:эрт TempAdj ;             ! "earlier"
+hанцарн:hанцарн TempAdj ;     ! "alone"
+hолдhрa:hолдhр TempAdj ;      ! "naked"
+цаhан:цаhан TempAdj ;         ! "white"
+айта:айта TempAdj ;           ! "nice"
+бадярта:бадярта TempAdj ;     ! "swollen"
+әәмшгтә:әәмшгтә TempAdj ;     ! "terrible"
+будгта:будгта TempAdj ;       ! "stained"
+арчлhн:арчлhн TempAdj ;       ! "clean"
+сахлго:сахлго TempAdj ;       ! "beardless"
+харhнсн:харhнсн TempAdj ;     ! "hungry"
+эрүл:эрүл TempAdj ;           ! "healthy"
+хар:хар TempAdj ;             ! "dark" 
+көгшн:көгшн TempAdj ;         ! "old" (of age)
+боса:боса TempAdj ;           ! "upright" (physically)
+идр:идр TempAdj ;	      ! "young"
+алдр:алдр TempAdj ;           ! "famous"
+әрүхн:әрүхн TempAdj ;         ! "dear"
+әрмгтә:әрмгтә TempAdj ;       ! "fat"
+бүкл:бүкл TempAdj ;	      ! "full" (whole)
+бичкнv:бичкнv TempAdj ;       ! "small"
+Удивленный:Удивленный TempAdj ; ! "surprised"
+
+
+LEXICON AdverbRoot
+
+ода:ода TempAdverb ;	      ! "now"
+даң:даң TempAdverb ;	      ! "always"
+сәәнәр:сәәнәр TempAdverb ;    ! "well"
+бас:бас TempAdverb ;          ! "yet"
+дәкн:дәкн TempAdverb ;        ! "again"
+бас:бас TempAdverb ;          ! "again"
+түргн:түргн TempAdverb ;      ! "quickly"
+му:му TempAdverb ;            ! "badly"
+амулң:амулң TempAdverb ;      ! "safely"
+йир:йир TempAdverb ;          ! "very"
+
+эн%<det%>%<dem%>:эн # ;       ! "this;the" TODO: add morph
+энүг%<det%>%<dem%>:энүг # ;   ! "this", acc TODO: add morph
+иим%<det%>:иим # ;            ! "such"
+болhн%<det%>%<dem%>:болhн # ; ! "each"
+
+LEXICON PostpositionRoot
+төлә:төлә TempPostPo ; ! "for; instead of"
+
+LEXICON PrepositionRoot
+күртл:күртл TempPrep ; ! "until"
+өмн:өмн TempPrep ;     ! "before"
+талданa:талдан TempPrep ; ! "but"
+
+
 
 LEXICON Numbers
 
@@ -340,12 +576,10 @@ LEXICON Numbers
 һурв:һурв Numerals ;         ! ord
 җирн:җирн Numerals ;         ! ord, 60
 
-
-
 LEXICON PronounRoot
 
-би%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:би ;     ! nom
-би%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:мини ;   ! gen
+би%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:би # ;     ! nom
+би%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:мини # ;   ! gen
 би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! acc
 би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! dat
 би%<prn%>%<pers%>%<p1%>%<sg%>:на PersPrnTwo ; ! Dir/LR
@@ -377,7 +611,7 @@ LEXICON PronounRoot
 та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !com
 та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !pos
 та%<prn%>%<pers%>%<p2%>%<sg%>%<for%>:та PersPrnFour ; !dir
-бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>%<nom%>:бидн ; 
+бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>%<nom%>:бидн # ; 
 бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
 бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
 бидн%<prn%>%<pers%>%<p1%>%<pl%>%<inc%>:ма PersPrnFour ;
@@ -404,23 +638,8 @@ LEXICON PronounRoot
 тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
 тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
 тадн%<prn%>%<pers%>%<p2%>%<pl%>:тад PersPrnFour ; 
-
-LEXICON ConjunctionRoot       ! TODO: add <conjcoo> and <conjsub> distinctions on all
-болн:болн Conjunctions ;      ! "and"
-юңгад% гихлә:юңгад% гихлә Conjunctions ; ! "because"
-паре:паре Conjunctions ;      ! "couple", lexical transfer, prep->conj
-
-LEXICON AdjectiveRoot
-əмтн:əмтн TempAdjective ;     ! "living/live"
-соңссн:соңссн TempAdjective ; ! "heard"
-кергтә:кергтә TempAdjective ; ! "necessary"
-Хальмг:Хальмг TempAdjective ; ! "Kalmyk"
-
-эн%<det%>%<dem%>:эн # ;         ! "this;the" TODO: add morph
-энүг%<det%>%<dem%>:энүг # ;     ! "this", acc TODO: add morph
-
-LEXICON PostpositionRoot
-төлә:төлә TempPostPo ; ! "for; instead of"
+что%<prn%>:что # ; ! "what" TODO: fix hard code, add impersonal prn
+кен%<prn%>:кен # ; ! "who" TODO: fix
 
 
 ! Resources:
